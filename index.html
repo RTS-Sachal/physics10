@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Class IX Physics MCQs | Sindh Textbook | Prepared by Irfan Ali</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- MathJax -->
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#e3f2fd,#fdfefe);
+  padding:20px;
+}
+.quiz-box{
+  max-width:950px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+h1{
+  text-align:center;
+  color:#2c3e50;
+}
+h2{
+  text-align:center;
+  color:#555;
+  font-weight:normal;
+}
+.question{
+  margin:20px 0;
+  padding:15px;
+  border-bottom:1px solid #eee;
+}
+.option{
+  display:block;
+  padding:12px 15px;
+  margin:8px 0;
+  border-radius:10px;
+  background:#f4f7ff;
+  cursor:pointer;
+  transition:.25s;
+}
+.option:hover{
+  background:#dde7ff;
+}
+.correct{
+  background:#c8f7c5 !important;
+}
+.wrong{
+  background:#f7c5c5 !important;
+}
+.option span{
+  float:right;
+  font-size:18px;
+  font-weight:bold;
+}
+#score{
+  margin-top:30px;
+  padding:15px;
+  font-size:22px;
+  text-align:center;
+  color:#0b8457;
+  background:#ecfdf3;
+  border-radius:12px;
+  display:none;
+} footer{
+  text-align:center;
+  margin-top:25px;
+  color:#777;
+  font-size:14px;
+}
+
+/* ===== COVER IMAGE ===== */
+.cover-img{
+  height:260px;
+  background-image:url("phy.png");
+  background-size:cover;
+  background-position:center;
+  border-radius:16px;
+  margin-bottom:30px;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  border-radius:16px;
+}
+
+.overlay h1{
+  font-size:34px;
+  margin:0;
+}
+
+.overlay p{
+  font-size:18px;
+  margin:6px 0;
+}
+
+.overlay span{
+  margin-top:10px;
+  padding:6px 16px;
+  background:rgba(255,255,255,0.25);
+  border-radius:20px;
+  font-size:14px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+
+  <div class="cover-img">
+    <div class="overlay">
+ <h1 style="color:#1e90ff;">
+  Class X Physics MCQs
+</h1>
+<p style="color:#9ACD32 ; font-size:18px;">
+  Sindh Textbook Board
+</p>
+<span style="color:#ffff00; font-size:20px; font-weight:600;">
+  Prepared by Irfan Ali
+</span>
+
+    </div>
+  </div>
+
+  <div id="quiz"></div>
+  <div id="score"></div>
+
+  <footer>
+    © Free Online Practice – Physics Class X
+  </footer>
+
+</div>
+
+
+<script>
+const quizData = [
+{q:"A girl throws a small stone into a lake. Waves spread out and ten waves reach the bank in 5.0 s. What is the frequency of the waves?",o:["0.50 Hz","15 Hz","2.0 Hz","50 Hz"],a:2},
+{q:"Water waves pass from deep into shallow region and are refracted. Which characteristic remains constant?",o:["Direction","Frequency","Speed","Wavelength"],a:1},
+{q:"Which is not a characteristic of a wave?",o:["Amplitude","Period","Mass","Velocity"],a:2},
+{q:"In simple harmonic motion, maximum speed occurs at:",o:["Highest point","Lowest point","Equilibrium point","Extreme point"],a:2},
+{q:"In an oscillating pendulum, the bob accelerates from extreme position due to:",o:["Inertia","Tension in string","Wind","Gravitational force"],a:3},
+{q:"In the ball and bowl system, mean position is at:",o:["Earth","Floor of bowl","Center of bowl","Extreme position"],a:1},
+{q:"Oscillations are damped due to presence of:",o:["Linear motion","Restoring force","Frictional force","Mechanical force"],a:2},
+{q:"Sound is a form of:",o:["Electrical energy","Mechanical energy","Thermal energy","Chemical energy"],a:1},
+{q:"Audible frequency range for human ear is:",o:["10 Hz–10 kHz","20 Hz–20 kHz","25 Hz–25 kHz","30 Hz–30 kHz"],a:1},
+{q:"Speed of sound in air at $0^{\\circ}C$ is approximately:",o:["332 m/s","34 m/s","17 m/s","680 m/s"],a:0},
+
+{q:"Sound travels faster in solids than gases because:",o:["Gas molecules are loosely packed","Sound doesn’t travel faster in solids","Solid molecules are tightly packed","Gas molecules move faster"],a:2},
+{q:"Factors affecting speed of sound in air are:",o:["Humidity & volume","Temperature & mass","Volume & mass","Temperature & humidity"],a:3},
+{q:"Distance between two consecutive compressions is called:",o:["Time period","Amplitude","Frequency","Wavelength"],a:3},
+{q:"Speed of sound from fastest to slowest is:",o:["Gas → Liquid → Solid","Liquid → Solid → Gas","Solid → Liquid → Gas","Gas → Solid → Liquid"],a:2},
+{q:"Which is a medical use of ultrasound?",o:["Absorption","Pre-natal scanning","Dispersion","Measuring humidity"],a:1},
+{q:"Cause of echo is:",o:["Absorption","Dispersion","Reflection","Refraction"],a:2},
+{q:"Which wave cannot travel through vacuum?",o:["Sound","Infra-red","Microwaves","X-rays"],a:0},
+{q:"Waves with maximum penetrating power are:",o:["Ultraviolet","Microwaves","Gamma rays","Radio waves"],a:2},
+{q:"Radiotherapy uses:",o:["Infrared rays","Visible rays","X-rays","Ultraviolet"],a:2},
+{q:"Velocity of light in diamond (n=2.5) is:",o:["$1.2×10^8$ m/s","$5×10^8$ m/s","$1.2×10^{10}$ m/s","$2.5×10^8$ m/s"],a:0},
+
+{q:"Only electromagnetic waves are:",o:["Light, Radio, Microwaves","Light, Radio, Sound","Light, Sound, Microwaves","Radio, Sound, Microwaves"],a:0},
+{q:"Increasing wavelength order is:",o:["Microwaves, X-rays, Gamma","Microwaves, Gamma, X-rays","X-rays, Gamma, Microwaves","Gamma, X-rays, Microwaves"],a:3},
+{q:"Night security scanners use:",o:["Infra-red","Microwaves","Radio waves","X-rays"],a:0},
+{q:"Wave property unchanged during refraction:",o:["Direction","Frequency","Speed","Wavelength"],a:1},
+{q:"TV remote uses:",o:["Radio waves","Infra-red waves","Ultraviolet","Visible light"],a:1},
+{q:"Least deviated color in prism is:",o:["Violet","Green","Red","Yellow"],a:2},
+{q:"Splitting of white light is called:",o:["Refraction","Reflection","Dispersion","Diffraction"],a:2},
+{q:"Image size in concave mirror depends on:",o:["Object size","Object position","Area","Shape"],a:1},
+{q:"Image in human eye forms on:",o:["In front of retina","Behind retina","On retina","Between lens & retina"],a:2},
+{q:"Ray from denser to rarer medium bends:",o:["Toward normal","Away from normal","Parallel","Perpendicular"],a:1},
+
+{q:"Eyepiece focal length compared to objective is:",o:["Zero","Negative","Small","Large"],a:3},
+{q:"Critical angle for water is approximately:",o:["48.8°","49.1°","50.0°","51.0°"],a:1},
+{q:"Instrument to see dim stars:",o:["Microscope","Simple microscope","Endoscope","Telescope"],a:3},
+{q:"Human eye works like:",o:["Camera","Projector","Telescope","Microscope"],a:0},
+{q:"Magnifying glass forms:",o:["Real upright","Real inverted","Virtual upright","Virtual inverted"],a:2},
+{q:"Complete reflection inside denser medium is:",o:["External reflection","Internal reflection","External refraction","Internal refraction"],a:1},
+{q:"Core of optical fiber has:",o:["Zero RI","High RI","Low RI","No RI"],a:1},
+{q:"Magnifying glass is also:",o:["Endoscope","Compound microscope","Simple microscope","Telescope"],a:2},
+{q:"Image beyond retina defect is:",o:["Long sightedness","Short sightedness","Blind spot","Image defect"],a:0},
+{q:"Short sightedness corrected by:",o:["Convex lens","Convex mirror","Concave mirror","Concave lens"],a:3},
+
+{q:"Lenses form images by:",o:["Dispersion","Refraction","Diffraction","Reflection"],a:1},
+{q:"Dentists use for teeth:",o:["Concave mirror","Convex mirror","Convex lens","Concave lens"],a:0},
+{q:"Charges at rest is studied in:",o:["Electricity","Electrostatics","Quantum","Magnetism"],a:1},
+{q:"Force between two unit charges 1m apart is:",o:["0 N","1 N","2 N","k"],a:3},
+{q:"Coulomb’s law resembles:",o:["Energy law","Gravitation law","Newton 2nd law","Faraday law"],a:1},
+{q:"Force between two protons equals:",o:["0","2F","2/3F","F"],a:3},
+{q:"Electric force & field are:",o:["Parallel","Perpendicular","Opposite","Random"],a:0},
+{q:"Work done per unit charge is:",o:["Field","Current","Potential","Intensity"],a:2},
+{q:"Capacitance increases in:",o:["Parallel","Series","Both","None"],a:0},
+{q:"Two 8µF capacitors in series give:",o:["0.25µF","2µF","3µF","6µF"],a:1},
+
+{q:"Dielectric between plates makes capacitance:",o:["Increase","Decrease","Same","Zero"],a:0},
+{q:"Doubling plate area makes capacitance:",o:["Same","Half","Double","Zero"],a:2},
+{q:"Electrons moving from low to high potential:",o:["Gain energy","Lose identity","Lose energy","Gain potential"],a:0},
+{q:"Ammeter is connected in:",o:["Series","Parallel","Mixed","None"],a:0},
+{q:"Resistance does not depend on:",o:["Length","Area","Density","Resistivity"],a:2},
+{q:"Ohm’s law says:",o:["R↑ I↑","R↓ I↑","R↑ V↑","I↑ V↑"],a:3},
+{q:"Zero resistance condition is:",o:["Closed circuit","Open circuit","Short circuit","Zero circuit"],a:2},
+{q:"Ohm’s law valid when:",o:["Temp constant","I∝V","Wire type","All"],a:3},
+{q:"Ohm’s law not for:",o:["Semiconductors","DC circuits","Small R","High I"],a:0},
+{q:"6Ω & 12Ω parallel gives:",o:["7Ω","6Ω","4Ω","5Ω"],a:2},
+{q:"The property of a body to oppose the flow of electric charge through it is called:",o:["Capacitance","Potential","Resistance","Conductance"],a:2},
+
+{q:"The main purpose of a battery in an electric circuit is to:",o:["Increase resistance","Decrease resistance","Maintain potential difference","Store current"],a:2},
+
+{q:"Which statement about magnetic poles is correct?",o:["Like poles attract","Unlike poles repel","Single pole exists","Poles have no effect"],a:1},
+
+{q:"Magnetic field lines inside a bar magnet are directed from:",o:["North to south","South to north","Side to side","Randomly"],a:1},
+
+{q:"Presence of a magnetic field is detected by a:",o:["Small mass","Stationary charge","Moving electron","Magnetic compass"],a:3},
+
+{q:"If current in a wire perpendicular to a magnetic field increases, the force on it:",o:["Decreases","Increases","Remains same","Becomes zero"],a:1},
+
+{q:"A D.C motor converts:",o:["Mechanical to electrical energy","Electrical to mechanical energy","Chemical to electrical energy","Electrical to chemical energy"],a:1},
+
+{q:"Which part of D.C motor reverses current every half cycle?",o:["Armature","Commutator","Brushes","Slip rings"],a:1},
+
+{q:"Direction of induced e.m.f follows conservation of:",o:["Mass","Charge","Momentum","Energy"],a:3},
+
+{q:"A step-up transformer has:",o:["More turns in secondary","More turns in primary","Equal turns","No turns"],a:0},
+
+{q:"Transformer turns ratio 10 means:",o:["Np = 10 Ns","Ns = 10 Np","Ip = 10 Is","Vs = Ip"],a:1},
+
+{q:"Metals conduct electricity because they have free:",o:["Protons","Neutrons","Electrons","Photons"],a:2},
+
+{q:"Continuous flow of electrons is provided by:",o:["Cathode","Anode","Cell","Filament"],a:2},
+
+{q:"Electric field can be detected by a:",o:["Photon","Neutron","Proton","Electron"],a:3},
+
+{q:"If magnetic field direction is reversed, force direction:",o:["Reverses","Remains same","Random","Becomes zero"],a:0},
+
+{q:"Emission of electrons from hot metal is called:",o:["Photoelectric emission","Thermionic emission","Field emission","Static emission"],a:1},
+
+{q:"Output of NOT gate when input is 1:",o:["1","0","Both","None"],a:1},
+
+{q:"Boolean expression of AND gate is:",o:["A + B","A . B","A × B","A − B"],a:1},
+
+{q:"Electronics includes:",o:["Physics","Engineering","Technology","All of these"],a:3},
+
+{q:"Boolean expression of OR gate is:",o:["A . B","A + B","A × B","A − B"],a:1},
+
+{q:"Cathode rays carry:",o:["Positive charge","Neutral charge","Negative charge","No charge"],a:2},
+
+{q:"Another name of supercomputer is:",o:["Mini computer","Mainframe computer","High performance computer","Personal computer"],a:2},
+
+{q:"Input, processing, output and storage together form:",o:["Software cycle","Hardware cycle","Information processing cycle","Data cycle"],a:2},
+
+{q:"Processed data is called:",o:["Data","Information","Input","Storage"],a:1},
+
+{q:"Which is NOT a system software?",o:["Assembler","Compiler","Interpreter","Tally"],a:3},
+
+{q:"Computers connected within a building form:",o:["WAN","MAN","LAN","ANN"],a:2},
+
+{q:"Program translating one instruction at a time is:",o:["Compiler","Interpreter","CPU","Simulator"],a:1},
+
+{q:"A sequence of instructions to solve a problem is:",o:["Program","Algorithm","Flowchart","Pseudo code"],a:1},
+
+{q:"USB stands for:",o:["Ultra Serial Bus","Universal Serial Bus","Unified System Bus","Unlimited Serial Bus"],a:1},
+
+{q:"Which is NOT an MS Word file extension?",o:[".doc","docx",".rtf",".jpeg"],a:3},
+
+{q:"ICT stands for:",o:["Information Communication Technology","Integrated Computer Technology","Information and Communications Technology","Internal Communication Technology"],a:2},
+
+{q:"Speed of all electromagnetic waves in vacuum is:",o:["$3×10^6$ m/s","$3×10^7$ m/s","$3×10^8$ m/s","$3×10^9$ m/s"],a:2},
+
+{q:"Angle of incidence for total internal reflection is called:",o:["Incident angle","Reflection angle","Critical angle","Normal angle"],a:2},
+
+{q:"Neutron is made up of:",o:["Two up & one down","Two down & one up","Three up","Three down"],a:1},
+
+{q:"SI unit of electric field intensity is:",o:["Volt","Coulomb","N/C","Joule"],a:2},
+
+{q:"Frequency of direct current (DC) is:",o:["50 Hz","60 Hz","0 Hz","100 Hz"],a:2},
+
+{q:"Fuse protects circuit by breaking it during:",o:["High voltage","Low voltage","Excessive current","High resistance"],a:2},
+
+{q:"Convex mirror is used as rear-view mirror because image is:",o:["Real & inverted","Real & upright","Virtual & inverted","Virtual & upright"],a:3},
+{q:"When an electric current passes through a conductor, a magnetic field is produced around it. This effect is known as:",o:["Electrostatic effect","Electromagnetic effect","Chemical effect","Thermal effect"],a:1},
+
+{q:"The device used to convert alternating current (AC) into direct current (DC) is called:",o:["Transformer","Generator","Rectifier","Inductor"],a:2}
+
+
+
+];
+
+let quiz=document.getElementById("quiz");
+let score=0;
+
+quizData.forEach((q,i)=>{
+  let div=document.createElement("div");
+  div.className="question";
+  div.innerHTML=`<b>${i+1}. ${q.q}</b>`;
+  q.o.forEach((opt,idx)=>{
+    let o=document.createElement("div");
+    o.className="option";
+    o.innerHTML=opt+" <span></span>";
+    o.onclick=()=>{
+      if(o.classList.contains("done")) return;
+      let opts=o.parentNode.querySelectorAll(".option");
+      opts.forEach(x=>x.classList.add("done"));
+      if(idx === q.a){
+  o.classList.add("correct");
+  o.querySelector("span").innerHTML = "✔";
+  score++;
+}else{
+  o.classList.add("wrong");
+  o.querySelector("span").innerHTML = "✘";
+
+  // show correct option
+  opts[q.a].classList.add("correct");
+  opts[q.a].querySelector("span").innerHTML = "✔";
+}
+
+      if(i===quizData.length-1){
+        document.getElementById("score").style.display="block";
+        document.getElementById("score").innerHTML=
+        `Your Final Score: <b>${score} / ${quizData.length}</b>`;
+      }
+    };
+    div.appendChild(o);
+  });
+  quiz.appendChild(div);
+});
+</script>
+
+</body>
+</html>
