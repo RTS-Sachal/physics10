@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Computer Science Class X MCQs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f1f5f9;
+}
+header{
+  background:#1e40af;
+  color:white;
+  padding:25px;
+  text-align:center;
+}
+header h1{
+  margin:0;
+}
+header p{
+  margin-top:6px;
+  font-size:14px;
+}
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+.question-box{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:18px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+.question{
+  font-weight:bold;
+  margin-bottom:12px;
+}
+.option{
+  padding:10px;
+  border:2px solid #e5e7eb;
+  border-radius:8px;
+  margin-bottom:8px;
+  cursor:pointer;
+}
+.option:hover{
+  background:#e0ecff;
+}
+.option.correct{
+  background:#dcfce7;
+  border-color:#16a34a;
+  color:#166534;
+}
+.option.wrong{
+  background:#fee2e2;
+  border-color:#dc2626;
+  color:#7f1d1d;
+}
+.option.disabled{
+  pointer-events:none;
+}
+.option.correct::after{
+  content:" ✔";
+  float:right;
+  font-weight:bold;
+}
+.option.wrong::after{
+  content:" ✖";
+  float:right;
+  font-weight:bold;
+}
+#result{
+  display:none;
+  background:#020617;
+  color:white;
+  padding:20px;
+  text-align:center;
+  border-radius:12px;
+  margin-top:30px;
+}
+footer{
+  text-align:center;
+  padding:15px;
+  color:#475569;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Computer Science Class X MCQs</h1>
+  <p>Sindh Text Board • Prepared by Irfan Ali</p>
+</header>
+
+<div class="container" id="quiz"></div>
+
+<div class="container">
+  <div id="result"></div>
+</div>
+
+<footer>
+  © Roshan Tara Secondary School
+</footer>
+
+<script>
+const questions = [
+/* ===== UNIT 1 ===== */
+{
+q:"To \"bake a cake\" is an example of:",
+o:["problem","strategy","algorithm","solution"],
+a:2
+},
+{
+q:"To find a feasible solution to a problem, the first step is to:",
+o:["establish starting point","find available solutions","create a strategy","identify and analyze the problem"],
+a:3
+},
+{
+q:"Step by step solution of a problem in simple language is called:",
+o:["Problem Solving","Algorithm","Flowchart","Data Structure"],
+a:1
+},
+{
+q:"__________ shows the logic of program graphically.",
+o:["Data Structure","Graph","Algorithm","Flowchart"],
+a:3
+},
+{
+q:"__________ Symbol is used for input/output in flowchart.",
+o:["Triangle","Square","Parallelogram","Rectangle"],
+a:2
+},
+{
+q:"Elements of __________ data structure are not connected sequentially.",
+o:["Array","Graph","Queue","Stack"],
+a:1
+},
+{
+q:"__________ stores data in hierarchal manner.",
+o:["Stack","Queue","Array","Tree"],
+a:3
+},
+{
+q:"When that data is Pushed in stack, it means that data is:",
+o:["inserted","deleted","sorted","edited"],
+a:0
+},
+{
+q:"In binary tree, each child can have maximum:",
+o:["one node","two nodes","three nodes","four nodes"],
+a:1
+},
+{
+q:"Traversing an array means accessing:",
+o:["first element","last element","any specific element","each and every element of the array"],
+a:3
+},
+
+/* ===== UNIT 2 ===== */
+{
+q:"A computer program is a collection of:",
+o:["Tasks","Instructions","Computers","Programmers"],
+a:1
+},
+{
+q:"High-level languages have syntax that is:",
+o:["Easily readable by humans","Easily readable by machines","Easily readable by both","None of the above"],
+a:0
+},
+{
+q:"Low-level languages have syntax that is:",
+o:["Easily readable by humans","Easily readable by machines","Easily readable by both","None of the above"],
+a:1
+},
+{
+q:"The primary characteristic of a compiler is to:",
+o:["Translate codes line-by-line","Translate low-level code","Detect logical errors","Translate codes all at once"],
+a:3
+},
+{
+q:"The primary characteristic of an interpreter is to:",
+o:["Translate codes line-by-line","Translate low-level code","Detect logical errors","Translate codes all at once"],
+a:0
+},
+{
+q:"An Integrated Development Environment facilitates a programmer to:",
+o:["Edit source code","Highlight syntax","Debug and compile","All of the above"],
+a:3
+},
+{
+q:"Allowed names for declaring a variable:",
+o:["Contain spaces","Reserved words","Letters, digits and underscores","Same as data type"],
+a:2
+},
+{
+q:"A bool data can store following type of value:",
+o:["Numbers","Strings","Fractional numbers","True or false"],
+a:3
+},
+{
+q:"Which data type occupies the most space in memory?",
+o:["Character","Integer","Floating point","Double floating point"],
+a:3
+},
+{
+q:"Which of the following is a reserved word (keyword) in C++?",
+o:["main","volatile","number","program"],
+a:1
+}
+
+,
+/* ===== UNIT 3: Input / Output Handling in C++ ===== */
+{
+q:"# symbol in #include <iostream> is called a:",
+o:["Logical operator","Preprocessor Directive","Statement terminator","Reserved word"],
+a:1
+},
+{
+q:"Which library must be included to use basic input/output functionality in C++?",
+o:["math.h","stdio.h","iostream","conio.h"],
+a:2
+},
+{
+q:"using namespace std; tells the compiler to use the:",
+o:["Private namespace","Standard namespace","System namespace","Global namespace"],
+a:1
+},
+{
+q:"Every C++ program must contain which function for execution to start?",
+o:["start()","begin()","main()","init()"],
+a:2
+},
+{
+q:"The symbol used to terminate a statement in C++ is the:",
+o:["Colon (:)","Period (.)","Semicolon (;)","Comma (,)"],
+a:2
+},
+{
+q:"The { symbol in C++ is also known as the:",
+o:["Opening Curly brace","Closing Curly brace","Statement block","Function header"],
+a:0
+},
+{
+q:"Which part of the C++ program contains the actual logic/instructions?",
+o:["Preprocessor Directives","Main Function Header","Body of Program / Function","Library section"],
+a:2
+},
+{
+q:"In int main(void), the word 'void' indicates that the function:",
+o:["Returns a value","Returns nothing","Is empty","Contains errors"],
+a:1
+},
+{
+q:"The iostream library contains definitions for which objects?",
+o:["Variables","Loop structures","cout and cin","Mathematical formulas"],
+a:2
+},
+{
+q:"In the structure int main(), the return 0; statement corresponds to which return type?",
+o:["void","char","int","float"],
+a:2
+},
+
+/* ===== UNIT 4: Control Structure ===== */
+{
+q:"Selection statements are used to:",
+o:["Repeat a block of code","Execute code based on a condition","Declare variables","Import libraries"],
+a:1
+},
+{
+q:"The if-else statement provides how many alternative paths?",
+o:["One","Two","Three","Unlimited"],
+a:1
+},
+{
+q:"Which statement is best for choosing one of many possible values for a single variable?",
+o:["if","if-else","switch","for"],
+a:2
+},
+{
+q:"Iteration is another name for:",
+o:["Selection","Sequence","Looping","Branching"],
+a:2
+},
+{
+q:"In a for loop, the counter is typically initialized, tested, and updated in:",
+o:["The body","The header","The footer","The library"],
+a:1
+},
+{
+q:"A while loop checks the condition:",
+o:["Before the loop body executes","After the loop body executes","Only once","Never"],
+a:0
+},
+{
+q:"A do-while loop is guaranteed to execute at least:",
+o:["Zero times","One time","Two times","Until crash"],
+a:1
+},
+{
+q:"To exit a switch block and prevent fall-through, which keyword is used?",
+o:["stop","exit","break","end"],
+a:2
+},
+{
+q:"The default case in a switch statement executes when:",
+o:["First case true","No case matches","Program starts","Error occurs"],
+a:1
+},
+{
+q:"A loop that never ends is called a/an:",
+o:["Finite loop","Infinite loop","Logic loop","Sequence loop"],
+a:1
+},
+
+/* ===== UNIT 5: Functions ===== */
+{
+q:"A function is a:",
+o:["Single instruction","Self-contained block of code that performs a specific task","Type of variable","Programming language"],
+a:1
+},
+{
+q:"Providing the compiler with the function's name and return type before its use is called:",
+o:["Function Definition","Function Declaration (Prototype)","Function Calling","Function Execution"],
+a:1
+},
+{
+q:"The actual code/logic of a function is provided in the:",
+o:["Declaration","Call","Definition","Header"],
+a:2
+},
+{
+q:"To use a function in the main() program, you must perform a function:",
+o:["Declaration","Call","Definition","Logic"],
+a:1
+},
+{
+q:"The keyword used to send a value back from a function is:",
+o:["send","give","return","output"],
+a:2
+},
+{
+q:"Functions provided by the C++ compiler libraries are called:",
+o:["User-defined functions","Built-in (Library) functions","Static functions","Logical functions"],
+a:1
+},
+{
+q:"If a function does not return any value, its return type should be:",
+o:["int","float","void","empty"],
+a:2
+},
+{
+q:"Where is a function call typically placed?",
+o:["Inside another function (like main)","In the library files","Before preprocessor directives","End of program"],
+a:0
+},
+{
+q:"Breaking a large program into functions helps in:",
+o:["Making it slower","Reducing complexity and improving readability","Increasing errors","Hiding code"],
+a:1
+},
+{
+q:"Variables declared inside a function have which scope?",
+o:["Global","Local","Universal","Permanent"],
+a:1
+},
+
+/* ===== UNIT 6: Digital Logic and Design ===== */
+{
+q:"The Number System used by computers is:",
+o:["Decimal","Binary","Octal","Hexadecimal"],
+a:1
+},
+{
+q:"Which logic gate produces a HIGH output only if all inputs are HIGH?",
+o:["OR","AND","NOT","XOR"],
+a:1
+},
+{
+q:"A NOT gate is also known as a/an:",
+o:["Adder","Multiplier","Inverter","Buffer"],
+a:2
+},
+{
+q:"A table that shows all possible input combinations and their outputs is called a:",
+o:["Logic table","Data table","Truth table","Math table"],
+a:2
+},
+{
+q:"Which gate is the combination of AND and NOT gates?",
+o:["OR","NOR","NAND","XOR"],
+a:2
+},
+{
+q:"How many possible input combinations exist for a 2-input logic gate?",
+o:["2","4","8","16"],
+a:1
+},
+{
+q:"The Decimal number 10 is represented in Hexadecimal as:",
+o:["10","A","F","X"],
+a:1
+},
+{
+q:"To convert a binary number to decimal, we use powers of which base?",
+o:["2","10","16","8"],
+a:0
+},
+{
+q:"Digital logic is the foundation of which hardware component?",
+o:["Power supply","Central Processing Unit (CPU)","Computer case","Keyboard"],
+a:1
+},
+
+/* ===== UNIT 7: Introduction to Scratch ===== */
+{
+q:"Scratch is a __________ programming language.",
+o:["Text-based","Block-based (Visual)","Low-level","Machine"],
+a:1
+},
+{
+q:"Characters or objects in Scratch are called:",
+o:["Actors","Sprites","Blocks","Scripts"],
+a:1
+},
+{
+q:"To start a program in Scratch, we usually click the:",
+o:["Red Button","Green Flag","Space Key","Sprite"],
+a:1
+},
+{
+q:"Which block category controls the movement of sprites?",
+o:["Looks","Motion","Sound","Control"],
+a:1
+},
+{
+q:"The background of the Stage is called the:",
+o:["Sprite","Costume","Backdrop","Script"],
+a:2
+},
+{
+q:"Blocks that repeat actions are found in:",
+o:["Events","Control","Motion","Sound"],
+a:1
+},
+{
+q:"The 'If-Then' block in Scratch is equivalent to which C++ structure?",
+o:["for loop","Selection (if) statement","Variable declaration","Preprocessor directive"],
+a:1
+}
+,
+/* ===== EXTRA QUESTIONS TO COMPLETE 100 (FROM PDF) ===== */
+
+/* ---- UNIT 3 (Concept-Derived) ---- */
+{
+q:"Single-line comments in C++ start with which symbol?",
+o:["/*","//","#","--"],
+a:1
+},
+{
+q:"Multi-line comments are enclosed between which symbols?",
+o:["// and //","{ and }","/* and */","# and #"],
+a:2
+},
+{
+q:"Which preprocessor directive is used to define a constant value?",
+o:["#include","#define","#const","#value"],
+a:1
+},
+{
+q:"The cout object is used to perform which operation?",
+o:["User input","Screen output","Variable declaration","Mathematical calculation"],
+a:1
+},
+{
+q:"Which operator is used with cout to send data to the screen?",
+o:[">> (Extraction)","<< (Insertion)","== (Equality)","= (Assignment)"],
+a:1
+},
+{
+q:"How does the compiler treat comment statements?",
+o:["Executes them","Translates them","Ignores them","Checks syntax"],
+a:2
+},
+{
+q:"The Namespace is described as a collection of:",
+o:["Computers","Identifiers (variables, functions, etc.)","Hardware drivers","Internet protocols"],
+a:1
+},
+{
+q:"A \"Statement\" in C++ is defined as:",
+o:["A comment","An instruction that performs a task","A library file","A variable"],
+a:1
+},
+
+/* ---- UNIT 4 (Concept-Derived) ---- */
+{
+q:"Which logical operator represents \"AND\" in C++?",
+o:["||","!","&&","&"],
+a:2
+},
+{
+q:"The logical operator || represents which condition?",
+o:["NOT","AND","OR","XOR"],
+a:2
+},
+{
+q:"Unconditional branching is achieved using which keyword?",
+o:["if","switch","goto","return"],
+a:2
+},
+{
+q:"In the expression !(5 > 3), what is the result?",
+o:["true","false","5","3"],
+a:1
+},
+{
+q:"What is \"Conditional Branching\"?",
+o:["Running code line by line","Jumping to code if condition is met","Repeating forever","Defining a function"],
+a:1
+},
+{
+q:"Which logical operator reverses the truth value of a condition?",
+o:["&&","||","!","=="],
+a:2
+},
+{
+q:"If a condition in a while loop is false initially, how many times will the body execute?",
+o:["0","1","10","Infinite"],
+a:0
+},
+
+/* ---- UNIT 5 (Concept-Derived) ---- */
+{
+q:"Functions created by the programmer for specific needs are called:",
+o:["Built-in functions","User-defined functions","Automatic functions","System functions"],
+a:1
+},
+{
+q:"In int sum(int a, int b), the int at the very beginning is the:",
+o:["Function name","Parameter list","Return type","Function body"],
+a:2
+},
+{
+q:"Variables listed in the function's header are known as:",
+o:["Local variables","Formal Parameters","Global constants","Terminators"],
+a:1
+},
+{
+q:"Which of the following is a mathematical built-in function?",
+o:["cout","sqrt()","main()","cin"],
+a:1
+},
+{
+q:"How many values can a function return at once using the return statement?",
+o:["Zero","One","Two","Multiple"],
+a:1
+},
+{
+q:"A function prototype must end with which symbol?",
+o:[":",";","}"," )"],
+a:1
+},
+{
+q:"The header file <cmath> is required to use which type of functions?",
+o:["Input/Output","Mathematical","String","Graphics"],
+a:1
+},
+{
+q:"Reusability means:",
+o:["Writing code again","Defining once and calling many times","Deleting code","Using same variable"],
+a:1
+},
+
+/* ---- UNIT 6 (Concept-Derived) ---- */
+{
+q:"Which gate is the combination of OR and NOT gates?",
+o:["NAND","NOR","AND","NOT"],
+a:1
+},
+{
+q:"In a truth table, if inputs are A=1 and B=0, what is the output of an OR gate?",
+o:["0","1","2","Error"],
+a:1
+},
+{
+q:"In a truth table, if inputs are A=1 and B=0, what is the output of an AND gate?",
+o:["0","1","10","null"],
+a:0
+},
+{
+q:"Why are NAND and NOR gates called \"Universal Gates\"?",
+o:["Only gates used","Implement any other gate","Always HIGH","One input"],
+a:1
+},
+{
+q:"The Decimal number system has a base of:",
+o:["2","5","10","12"],
+a:2
+},
+
+/* ---- UNIT 7 (Concept-Derived) ---- */
+{
+q:"Which block category is used to change the size or color of a sprite?",
+o:["Motion","Looks","Sensing","Operators"],
+a:1
+},
+{
+q:"\"When Green Flag Clicked\" is an example of which block type?",
+o:["Motion block","Hat (Event) block","Reporter block","Sound block"],
+a:1
+},
+{
+q:"The coordinates (0, 0) on the Scratch Stage represent the:",
+o:["Top-left corner","Bottom-right corner","Center of the Stage","Sprite home"],
+a:2
+},
+{
+q:"Scratch was developed primarily to help students learn:",
+o:["Hard drive repair","Computational thinking and coding basics","Typing speed","Web hosting"],
+a:1
+}
+,
+/* ---- EXTRA UNIQUE QUESTIONS ---- */
+{
+q:"Which term refers to adding an element into a Queue?",
+o:["Push","Pop","Enqueue","Dequeue"],
+a:2
+},
+{
+q:"Which component of the IDE directs the operating system to load the executable file into memory?",
+o:["Compiler","Linker","Loader","Assembler"],
+a:2
+}
+
+];
+
+let score = 0;
+let answered = 0;
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((q,i)=>{
+  const box = document.createElement("div");
+  box.className = "question-box";
+  box.innerHTML = `<div class="question">${i+1}. ${q.q}</div>`;
+  q.o.forEach((opt,idx)=>{
+    const div = document.createElement("div");
+    div.className="option";
+    div.innerText = opt;
+    div.onclick = ()=>{
+      if(div.classList.contains("disabled")) return;
+      const opts = div.parentElement.querySelectorAll(".option");
+      opts.forEach(o=>o.classList.add("disabled"));
+      if(idx===q.a){
+        div.classList.add("correct");
+        score++;
+      }else{
+        div.classList.add("wrong");
+        opts[q.a].classList.add("correct");
+      }
+      answered++;
+      if(answered===questions.length){
+        document.getElementById("result").style.display="block";
+        document.getElementById("result").innerHTML =
+        `<h2>Final Score</h2><p>${score} / ${questions.length}</p>`;
+      }
+    };
+    box.appendChild(div);
+  });
+  quiz.appendChild(box);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chemistry Class X MCQs | STBB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f9;
+        margin: 0;
+        padding: 0;
+    }
+    .quiz-container {
+        max-width: 750px;
+        margin: 40px auto;
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 5px;
+    }
+    .subheading {
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+    .question {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    .options button {
+        width: 100%;
+        padding: 10px;
+        margin: 6px 0;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #ecf0f1;
+    }
+    .options button:hover {
+        background: #dcdde1;
+    }
+    .correct {
+        background: #2ecc71 !important;
+        color: white;
+    }
+    .wrong {
+        background: #e74c3c !important;
+        color: white;
+    }
+    .feedback {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+    .nav-buttons button {
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        color: white;
+    }
+    .prev-btn {
+        background: #7f8c8d;
+    }
+    .next-btn {
+        background: #3498db;
+    }
+    .prev-btn:hover {
+        background: #636e72;
+    }
+    .next-btn:hover {
+        background: #2980b9;
+    }
+</style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Chemistry Class X MCQs</h1>
+    <div class="subheading">
+        Sindh Textbook Board<br>
+        Prepared by <strong>Irfan Ali</strong>
+    </div>
+
+    <div id="quiz">
+        <div class="question" id="question"></div>
+        <div class="options" id="options"></div>
+        <div class="feedback" id="feedback"></div>
+
+        <div class="nav-buttons">
+            <button class="prev-btn" onclick="prevQuestion()">Previous</button>
+            <button class="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const quizData = [
+
+/* ===== Chapter 1: Chemical Equilibrium ===== */
+{q:"1. Chemical equilibrium is established when:",options:["Reaction stops","Forward rate equals reverse rate","Reactants finish","Products decompose"],answer:1},
+{q:"2. A reversible reaction is represented by:",options:["→","⇌","←","="],answer:1},
+{q:"3. Law of mass action relates reaction rate to:",options:["Pressure","Temperature","Concentration","Volume"],answer:2},
+{q:"4. Equilibrium constant Kc depends on:",options:["Initial concentration","Catalyst","Temperature","Pressure"],answer:2},
+{q:"5. If Qc > Kc, reaction will proceed:",options:["Forward","Backward","Stops","Explodes"],answer:1},
+{q:"6. Unit of Kc depends on:",options:["Reaction equation","Temperature","Catalyst","Pressure"],answer:0},
+{q:"7. At equilibrium, concentration of reactants:",options:["Zero","Maximum","Constant","Increasing"],answer:2},
+{q:"8. Catalyst affects equilibrium by:",options:["Changing Kc","Shifting equilibrium","Speed only","Stopping reaction"],answer:2},
+{q:"9. Dynamic equilibrium means:",options:["No motion","Equal concentrations","Continuous reactions","Static system"],answer:2},
+{q:"10. Large value of Kc indicates:",options:["Reactants favored","Products favored","No reaction","Slow reaction"],answer:1},
+
+/* ===== Chapter 2: Acids, Bases & Salts ===== */
+{q:"11. Arrhenius acid produces in water:",options:["OH⁻","H⁺","Na⁺","Cl⁻"],answer:1},
+{q:"12. pH of neutral solution is:",options:["0","5","7","14"],answer:2},
+{q:"13. Base according to Bronsted concept is:",options:["Proton donor","Electron donor","Proton acceptor","Salt"],answer:2},
+{q:"14. Acid + Base →",options:["Acid","Base","Salt + Water","Gas"],answer:2},
+{q:"15. pH scale ranges from:",options:["0–7","1–10","0–14","7–14"],answer:2},
+{q:"16. Blue litmus turns red in:",options:["Base","Salt","Acid","Buffer"],answer:2},
+{q:"17. Substance reacting with both acid & base:",options:["Neutral","Amphoteric","Salt","Buffer"],answer:1},
+{q:"18. Strong acid example is:",options:["CH₃COOH","HCl","NH₄OH","Na₂CO₃"],answer:1},
+{q:"19. Buffer resists change in:",options:["Color","Temperature","pH","Pressure"],answer:2},
+{q:"20. Washing soda is:",options:["NaCl","Na₂CO₃","NaHCO₃","CaCO₃"],answer:1},
+
+/* ===== Chapter 3: Organic Chemistry ===== */
+{q:"21. Organic chemistry studies:",options:["All elements","Carbon compounds","Metals","Salts"],answer:1},
+{q:"22. Simplest hydrocarbon is:",options:["Ethane","Methane","Propane","Butane"],answer:1},
+{q:"23. Alkane general formula is:",options:["CnH2n","CnH2n+2","CnH2n−2","CnHn"],answer:1},
+{q:"24. –OH functional group belongs to:",options:["Acid","Alcohol","Aldehyde","Ketone"],answer:1},
+{q:"25. Petroleum is separated by:",options:["Filtration","Chromatography","Fractional distillation","Crystallization"],answer:2},
+{q:"26. Homologous series members differ by:",options:["CH₂","H₂","C","O"],answer:0},
+{q:"27. Carboxylic acid group is:",options:["–CHO","–COOH","–CO","–OH"],answer:1},
+{q:"28. Unsaturated hydrocarbons contain:",options:["Single bonds","Double/triple bonds","No bonds","Ionic bonds"],answer:1},
+{q:"29. Natural gas mainly contains:",options:["Ethane","Methane","Butane","Propane"],answer:1},
+{q:"30. Organic compounds generally have:",options:["High melting point","Low melting point","Ionic nature","Metallic bond"],answer:1},
+
+/* ===== Chapter 4: Biochemistry ===== */
+{q:"31. Biochemistry deals with:",options:["Rocks","Living organisms","Atmosphere","Metals"],answer:1},
+{q:"32. Carbohydrates provide:",options:["Protection","Energy","Vitamins","Enzymes"],answer:1},
+{q:"33. Basic unit of protein is:",options:["Glucose","Fatty acid","Amino acid","Starch"],answer:2},
+{q:"34. Enzymes are:",options:["Acids","Catalysts","Salts","Fats"],answer:1},
+{q:"35. Fat-soluble vitamins are:",options:["B,C","A,D,E,K","C only","B12"],answer:1},
+{q:"36. DNA is found in:",options:["Cytoplasm","Nucleus","Ribosome","Mitochondria"],answer:1},
+{q:"37. Deficiency of vitamin C causes:",options:["Rickets","Scurvy","Night blindness","Anemia"],answer:1},
+{q:"38. Proteins are made of:",options:["Sugars","Lipids","Amino acids","Salts"],answer:2},
+{q:"39. Lipids are insoluble in:",options:["Alcohol","Ether","Water","Benzene"],answer:2},
+{q:"40. Enzyme activity depends on:",options:["pH & temp","Pressure","Volume","Color"],answer:0},
+
+/* ===== Chapter 5: Environmental Chemistry I (Atmosphere) ===== */
+{q:"41. Lowest atmospheric layer is:",options:["Stratosphere","Troposphere","Mesosphere","Thermosphere"],answer:1},
+{q:"42. Ozone layer is in:",options:["Troposphere","Stratosphere","Mesosphere","Exosphere"],answer:1},
+{q:"43. Main greenhouse gas is:",options:["O₂","CO₂","N₂","H₂"],answer:1},
+{q:"44. Primary pollutants are:",options:["Formed in air","Directly emitted","Secondary","Natural only"],answer:1},
+{q:"45. UV radiation is absorbed by:",options:["CO₂","Ozone","Nitrogen","Oxygen"],answer:1},
+{q:"46. Acid rain is caused by:",options:["CO₂","SO₂ & NO₂","O₂","H₂"],answer:1},
+{q:"47. Smog is mixture of:",options:["Smoke & fog","Dust & air","Gas & water","Clouds"],answer:0},
+{q:"48. Ozone depletion increases:",options:["Rainfall","UV rays","Oxygen","Clouds"],answer:1},
+{q:"49. Clean air mainly contains:",options:["CO₂","O₂ & N₂","SO₂","CO"],answer:1},
+{q:"50. Atmosphere protects life by:",options:["Heat","UV blocking","Rain","Pressure"],answer:1},
+
+/* ===== Chapter 6: Environmental Chemistry II (Water) ===== */
+{q:"51. Hardness of water is due to:",options:["Na salts","Ca & Mg salts","K salts","Fe salts"],answer:1},
+{q:"52. Temporary hardness removed by:",options:["Boiling","Filtering","Chlorination","Distillation"],answer:0},
+{q:"53. Permanent hardness removed by:",options:["Boiling","Washing soda","Filtering","Cooling"],answer:1},
+{q:"54. Eutrophication is caused by:",options:["Oil","Detergents","Metals","Plastic"],answer:1},
+{q:"55. Safe drinking water should be:",options:["Colored","Odorless","Turbid","Salty"],answer:1},
+{q:"56. Chlorination kills:",options:["Salts","Germs","Oxygen","Minerals"],answer:1},
+{q:"57. Underground water is usually:",options:["Soft","Hard","Pure","Distilled"],answer:1},
+{q:"58. Water pollution affects:",options:["Plants only","Animals only","Aquatic life","Air"],answer:2},
+{q:"59. Sewage contains:",options:["Pure water","Waste","Salts only","Gases"],answer:1},
+{q:"60. WHO stands for:",options:["World Health Org","Water Health Org","World Hydro Org","None"],answer:0},
+
+/* ===== Chapter 7: Analytical Chemistry ===== */
+{q:"61. Analytical chemistry deals with:",options:["Preparation","Analysis","Industry","Biology"],answer:1},
+{q:"62. Chromatography separates based on:",options:["Density","Solubility","Color","Mass"],answer:1},
+{q:"63. Paper chromatography uses:",options:["Paper","Glass","Plastic","Metal"],answer:0},
+{q:"64. Titration determines:",options:["Color","Volume","Concentration","Density"],answer:2},
+{q:"65. Conductometry measures:",options:["Heat","Light","Conductance","Mass"],answer:2},
+{q:"66. Indicator changes color at:",options:["End point","Start","Middle","Random"],answer:0},
+{q:"67. Volumetric analysis uses:",options:["Balance","Burette","Thermometer","Beaker"],answer:1},
+{q:"68. Qualitative analysis identifies:",options:["Amount","Nature","Mass","Volume"],answer:1},
+{q:"69. Quantitative analysis finds:",options:["Nature","Color","Amount","Smell"],answer:2},
+{q:"70. Chromatogram shows:",options:["Graph","Spots","Table","Equation"],answer:1},
+
+/* ===== Chapter 8: Industrial Chemistry ===== */
+{q:"71. Soap is made by:",options:["Neutralization","Saponification","Oxidation","Reduction"],answer:1},
+{q:"72. Detergents work better in:",options:["Hard water","Soft water","Cold only","Hot only"],answer:0},
+{q:"73. Cement is used in:",options:["Food","Construction","Medicine","Fuel"],answer:1},
+{q:"74. Glass is made from:",options:["Sand","Clay","Salt","Coal"],answer:0},
+{q:"75. Fertilizers increase:",options:["Pollution","Crop yield","Hardness","Salinity"],answer:1},
+{q:"76. Plastic is:",options:["Natural","Biodegradable","Synthetic polymer","Metal"],answer:2},
+{q:"77. Soap cleans due to:",options:["Foam","Emulsification","Smell","Color"],answer:1},
+{q:"78. Abrasives are used for:",options:["Polishing","Heating","Cooling","Dissolving"],answer:0},
+{q:"79. Sulphuric acid is used in:",options:["Batteries","Cooking","Drinking","Painting"],answer:0},
+{q:"80. Industrial waste should be:",options:["Released","Treated","Stored","Ignored"],answer:1}
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+    document.getElementById("feedback").innerText = "";
+    document.getElementById("options").innerHTML = "";
+
+    const qData = quizData[currentQuestion];
+    document.getElementById("question").innerText = qData.q;
+
+    qData.options.forEach((opt, index) => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(btn, index);
+        document.getElementById("options").appendChild(btn);
+    });
+}
+
+function checkAnswer(button, index) {
+    const correctIndex = quizData[currentQuestion].answer;
+    const buttons = document.querySelectorAll(".options button");
+
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (index === correctIndex) {
+        button.classList.add("correct");
+        document.getElementById("feedback").innerText = "Correct ✔";
+        score++;
+    } else {
+        button.classList.add("wrong");
+        buttons[correctIndex].classList.add("correct");
+        document.getElementById("feedback").innerText = "Wrong ✖";
+    }
+}
+
+function nextQuestion() {
+    if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+    } else {
+        document.getElementById("quiz").innerHTML =
+            `<h2>Your Score: ${score} / ${quizData.length}</h2>
+             <p>Quiz completed 🎉</p>`;
+    }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+    }
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>

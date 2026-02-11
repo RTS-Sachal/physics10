@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Class 9 & 10 MCQs | Sindh Text Board | Prepared by Irfan Ali</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Class 9 & 10 Math and Computer Science MCQs Sindh Text Board. Online quizzes for matric students. Prepared by Irfan Ali.">
+<meta name="keywords" content="Sindh Text Board MCQs, Class 9 Math MCQs, Class 10 Computer MCQs, Online MCQs Pakistan, Matric Preparation">
+<meta name="author" content="Irfan Ali">
+<p style="text-align:center; color:#555;">
+Free Online MCQs for Class 9 and Class 10 – Sindh Text Board Mathematics and Computer Science
+</p>
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI, Arial, sans-serif;
+  background:#f1f5f9;
+}
+header{
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:#fff;
+  padding:22px;
+  text-align:center;
+}
+header h1{margin:0;}
+header p{margin-top:6px;font-size:14px;}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+.question-box{
+  background:#ffffff;
+  padding:18px;
+  border-radius:12px;
+  margin-bottom:16px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.08);
+}
+.question{
+  font-weight:600;
+  margin-bottom:12px;
+}
+.option{
+  padding:10px 14px;
+  border:2px solid #e5e7eb;
+  border-radius:10px;
+  margin-bottom:8px;
+  cursor:pointer;
+  transition:0.2s;
+}
+.option:hover{background:#e0f2fe;}
+.option.correct{
+  background:#dcfce7;
+  border-color:#16a34a;
+}
+.option.wrong{
+  background:#fee2e2;
+  border-color:#dc2626;
+}
+.option.disabled{pointer-events:none;}
+.option.correct::after{
+  content:" ✔";
+  float:right;
+  font-weight:bold;
+}
+.option.wrong::after{
+  content:" ✖";
+  float:right;
+  font-weight:bold;
+}
+#result{
+  display:none;
+  background:#020617;
+  color:white;
+  padding:24px;
+  text-align:center;
+  border-radius:14px;
+  margin-top:30px;
+}
+footer{
+  text-align:center;
+  padding:14px;
+  color:#475569;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Mathematics Class IX MCQs</h1>
+  <p>Sindh Textbook Board • Prepared by Irfan Ali</p>
+</header>
+
+<div class="container" id="quiz"></div>
+
+<div class="container">
+  <div id="result"></div>
+</div>
+
+<footer>© Online Matric Preparation</footer>
+
+<script>
+const questions = [
+{q:"The additive inverse of √5 is",o:["-√5","1/√5","√-5","-5"],a:0},
+{q:"(5i)(-2i) =",o:["-10","10","-10i","10i"],a:1},
+{q:"3(5+7)=3·5+3·7 uses property",o:["Commutative","Associative","Distributive","Closure"],a:2},
+{q:"√(-2) × √(-2) =",o:["2","-2","2i","-2i"],a:1},
+{q:"If log₁₀x = 4, then x =",o:["500","100","1000","10000"],a:3},
+{q:"Characteristic of log 54.58 is",o:["0","1","2","4"],a:1},
+{q:"Base of common logarithm is",o:["5","10","e","100"],a:1},
+{q:"log xyz =",o:["log x log y log z","log x + log y + log z","log (xy)^z","log x - log y - log z"],a:1},
+{q:"Scientific notation of 0.00789 is",o:["7.89×10⁻³","7.89×10³","0.789×10⁻²","78.9×10⁻⁴"],a:0},
+{q:"If log x = 2 then x =",o:["200","1000","100","2/10"],a:2},
+
+{q:"If log₂8 = x then x =",o:["64","3²","3","2⁸"],a:2},
+{q:"Base of natural logarithm is",o:["10","e","π","5"],a:1},
+{q:"3⁵ = 243 in logarithmic form is",o:["log₃5=243","log₃243=5","log₅243=12","log₅3=243"],a:1},
+{q:"Every polynomial is",o:["Irrational expression","Rational expression","Sentence","None"],a:1},
+{q:"Sum of two monomial surds is called",o:["Trinomial surd","Binomial surd","Conjugate surd","Monomial surd"],a:1},
+{q:"3x + 2y − 3 is an algebraic",o:["Expression","Equation","Sentence","Inequation"],a:0},
+{q:"Degree of 3x²y + 5y⁴ − 10 is",o:["4","5","6","10"],a:0},
+{q:"√7 is a",o:["Monomial surd","Trinomial surd","Binomial surd","Conjugate surd"],a:0},
+{q:"p(x)/q(x), q(x)≠0 is",o:["Rational expression","Irrational expression","Polynomial","Conjugate"],a:0},
+{q:"1/(x−y) − 1/(x+y) =",o:["2x/(x²−y²)","2y/(x²−y²)","−2x/(x²−y²)","−2y/(x²−y²)"],a:1},
+
+{q:"Conjugate of 2 − √3 is",o:["2+√3","−2−√3","−2+√3","√3−4"],a:0},
+{q:"a³ − 3ab(a−b) − b³ equals",o:["(a−b)³","(a+b)³","a³+b³","a³−b³"],a:0},
+{q:"If a+b=5 and a−b=3 then ab =",o:["4","5","3","6"],a:0},
+{q:"(5+√15)(5−√15) =",o:["10","15","25","30"],a:0},
+{q:"a²+b²+c²+2ab+2bc+2ca =",o:["(a+b−c)²","(a+b+c)²","(a−b+c)²","(a+b+c)³"],a:1},
+{q:"Factors of a²+2a−24 are",o:["a+4,a−6","a−4,a+6","a+3,a−8","a+8,a−3"],a:0},
+{q:"Factors of a²+2ab+b²−c² are",o:["(a−b+c)(a−b−c)","(a+b+c)(a−b−c)","(a+b+c)(a+b−c)","(a+b+c)(a−b−c)"],a:2},
+{q:"Factors of x³+y³ are",o:["(x−y)(x²+xy−y²)","(x+y)(x²+xy+y²)","(x+y)(x²−xy+y²)","(x+y)(x²−xy+y²)"],a:2},
+{q:"Factors of y³−27z³ are",o:["y−3z,y²+3yz+9z²","y−3z,y+3z+9z²","y−3z,y²−3yz+9z²","y+3z,y²−3yz+9z²"],a:1},
+{q:"1/(x+y)+y/(x²−y²) =",o:["(y+1)/(x²−y²)","x/(x²−y²)","y/(x²−y²)","(y−1)/(x²−y²)"],a:1},
+
+{q:"Value of m so x²+4x+m is perfect square",o:["8","−8","4","−4"],a:2},
+{q:"HCF of x²−4y² and x²−4xy+4y²",o:["x−4y","x²+2xy+y²","x+2y","x−2y"],a:3},
+{q:"LCM of (2y+3z)⁵ and (2y+3z)³",o:["2y+3z","(2y+3z)³","(2y+3z)²","(2y+3z)⁵"],a:3},
+{q:"HCF of x³−y³ and x²+xy+y²",o:["x+y","x²+xy+y²","x−y","(x−y)²"],a:1},
+{q:"LCM of (x−y)⁴ and (x−y)³",o:["(x−y)","(x−y)³","(x−y)⁴","(x−y)⁷"],a:2},
+{q:"|−20| =",o:["20","<20","−20",">20"],a:0},
+{q:"x ≤ 4 means",o:["x<4","x=4","x<4 or x=4","x>4 or x=4"],a:2},
+{q:"Solution set of √y = 10 is",o:["{100}","{10}","{−10}","{−10,10}"],a:0},
+{q:"√(y+4)+2=8 is",o:["Linear","Radical","Cubic","Quadratic"],a:1},
+{q:"Solution of 5−3y=−7 is",o:["{−4}","{1,4}","{4}","{12}"],a:2},
+
+{q:"Point (−3,−4) lies in",o:["1st","2nd","3rd","4th"],a:2},
+{q:"Axes intersect at angle",o:["45°","90°","180°","270°"],a:1},
+{q:"Line y=4 is parallel to",o:["x-axis","y-axis","Both","None"],a:0},
+{q:"Degree of quadratic equation is",o:["1","2","3","4"],a:1},
+{q:"Standard quadratic form is",o:["ax²+bx+c=0","ax²+c=0","ax²+bx=0","ax³+bx²+c=0"],a:0},
+{q:"Sum of angles of triangle is",o:["90°","180°","270°","360°"],a:1},
+{q:"Triangle with equal sides is",o:["Isosceles","Equilateral","Scalene","Right"],a:1},
+{q:"a(b+c)=ab+ac is",o:["Commutative","Associative","Distributive","Closure"],a:2},
+{q:"|x|=−x when",o:["x>0","x=0","x<0","x≥0"],a:2},
+{q:"The Quadratic Formula for ax² + bx + c = 0 is",o:["(-b − √(b² − 4ac))/2","(b ± √(b² − 4ac))/2a","(-b ± √(b² − 4ac))/2a","(-b ± √(b² + 4ac))/2a"],a:2},
+
+{q:"Solution set of x² + 10x + 24 = 0 is",o:["{-6, -4}","{-6, 4}","{6, 4}","{6, -4}"],a:0},
+
+{q:"Maximum number of roots of a quadratic equation are",o:["2","3","1","4"],a:0},
+
+{q:"Two linear factors of x² − 15x + 56 are",o:["(x−7) and (x+8)","(x+7) and (x−8)","(x−7) and (x−8)","(x+7) and (x+8)"],a:2},
+
+{q:"A polynomial equation which remains unchanged when x is replaced by 1/x is called",o:["Exponential equation","Reciprocal equation","Radical equation","None"],a:1},
+
+{q:"Equation 3ˣ + 3²⁻ˣ + 6 = 0 is a/an",o:["Exponential equation","Radical equation","Reciprocal equation","None"],a:0},
+
+{q:"Solution set of 4x² − 16 = 0 is",o:["{±4}","{4}","{±2}","None"],a:2},
+
+{q:"Equation 2x⁴ − 3x³ + 7x² − 3x + 2 = 0 is a/an",o:["Reciprocal equation","Radical equation","Exponential equation","None"],a:0},
+
+{q:"Which is NOT a sufficient condition for congruence of triangles?",o:["ASA","HSH","SAA","AAA"],a:3},
+
+{q:"If ∠A ≅ ∠B in ΔABC, then bisector of which angle divides triangle into congruent triangles?",o:["∠A","∠B","∠C","Any angle"],a:2},
+
+{q:"The diagonal of which does NOT divide it into two congruent triangles?",o:["Rectangle","Trapezium","Parallelogram","Square"],a:1},
+
+{q:"How many acute angles are there in an acute-angled triangle?",o:["1","2","3","Not more than 2"],a:2},
+
+{q:"logₐm + logₐn equals",o:["logₐ(m+n)","logₐ(mn)","logₐ(m−n)","logₐ(m/n)"],a:1},
+
+{q:"The symbol √ is called",o:["Radicand","Index","Radical sign","Base"],a:2},
+
+{q:"The value of i² is",o:["1","−1","0","i"],a:1},
+
+{q:"A surd containing a single term is called",o:["Monomial surd","Binomial surd","Trinomial surd","Conjugate surd"],a:0},
+
+{q:"(a − b)² equals",o:["a² + b² + 2ab","a² − b²","a² + b² − 2ab","(a+b)(a−b)"],a:2},
+
+{q:"Characteristic of log 0.0045467 is",o:["3","−3","2","−2"],a:1},
+
+{q:"In rational expression p(x)/q(x), q(x) must be",o:["Zero","Not zero","A surd","Irrational"],a:1},
+
+{q:"x² − y² equals",o:["(x−y)²","(x+y)(x−y)","x² + y² − 2xy","x² + y²"],a:1},
+
+{q:"Additive identity in real numbers is",o:["1","−1","0","π"],a:2},
+
+{q:"Multiplicative identity in real numbers is",o:["1","0","−1","e"],a:0},
+
+{q:"A polynomial equation of degree 2 is called",o:["Linear","Quadratic","Cubic","Biquadratic"],a:1},
+
+{q:"Solution set of |x| = 0 is",o:["{1}","{−1}","{0}","∅"],a:2},
+
+{q:"Point of intersection of coordinate axes is called",o:["Abscissa","Ordinate","Origin","Quadrant"],a:2},
+
+{q:"Value of logₐ1 is always",o:["1","0","a","10"],a:1},
+
+{q:"Any non-zero number raised to power zero equals",o:["0","1","Itself","Undefined"],a:1},
+
+{q:"If no common factor exists, HCF is",o:["0","1","Product","Sum"],a:1},
+
+{q:"In ordered pair (a, b), b is called",o:["x-coordinate","y-coordinate","Abscissa","Origin"],a:1},
+
+{q:"In ordered pair (a, b), a is called",o:["Abscissa","Ordinate","Origin","Coordinate"],a:0},
+
+{q:"a³ + b³ factors into",o:["(a+b)(a²−ab+b²)","(a−b)(a²+ab+b²)","(a+b)³","(a−b)³"],a:0},
+
+{q:"Triangle with all sides congruent is",o:["Isosceles","Equilateral","Scalene","Right-angled"],a:1},
+
+{q:"Sum of angles of a triangle is",o:["90°","180°","270°","360°"],a:1},
+
+{q:"a(b+c) = ab + ac is",o:["Commutative","Associative","Distributive","Closure"],a:2},
+
+{q:"In ⁿ√a, n is called",o:["Radicand","Index","Radical sign","Power"],a:1},
+
+{q:"logₐ(m/n) equals",o:["logₐm + logₐn","logₐm − logₐn","n logₐm","logₐn − logₐm"],a:1},
+
+{q:"Scientific notation of 400,900 is",o:["4.009 × 10⁵","4.009 × 10⁶","4.009 × 10⁻⁵","40.09 × 10⁴"],a:0},
+
+{q:"|x| = −x when",o:["x > 0","x = 0","x < 0","x ≥ 0"],a:2},
+
+{q:"Graph of x = a is parallel to",o:["x-axis","y-axis","Origin","None"],a:1},
+
+{q:"x + y = 5 is a linear equation in",o:["One variable","Two variables","Three variables","No variables"],a:1},
+{q:"The multiplicative inverse of √3 is",o:["√3","1/√3","−√3","3"],a:1},
+
+{q:"If log₁₀x = −2, then x equals",o:["0.01","100","−2","2"],a:0},
+
+{q:"The product of conjugates (√5 + 2)(√5 − 2) equals",o:["1","5","21","−21"],a:0},
+
+{q:"Degree of the polynomial 7x³ − 4x + 9 is",o:["1","2","3","4"],a:2},
+
+{q:"Which of the following is an irrational number?",o:["0.25","√7","3/5","−2"],a:1},
+
+{q:"If a − b = 0, then a/b is equal to",o:["0","1","Undefined","−1"],a:1},
+
+{q:"The value of (−3)² is",o:["−9","9","6","−6"],a:1},
+
+{q:"Which equation represents a straight line?",o:["x² + y = 3","x + y = 5","xy = 6","x² + y² = 4"],a:1},
+
+{q:"The graph of y = 0 coincides with",o:["x-axis","y-axis","Origin","Line y = x"],a:0},
+
+{q:"If |x| = 7, then x equals",o:["7","−7","±7","0"],a:2},
+
+{q:"The sum of roots of x² − 6x + 8 = 0 is",o:["8","−6","6","−8"],a:2}
+
+];
+
+let score=0, answered=0;
+const quiz=document.getElementById("quiz");
+
+questions.forEach((q,i)=>{
+  const box=document.createElement("div");
+  box.className="question-box";
+  box.innerHTML=`<div class="question">${i+1}. ${q.q}</div>`;
+  q.o.forEach((opt,idx)=>{
+    const div=document.createElement("div");
+    div.className="option";
+    div.innerHTML=opt;
+    div.onclick=()=>{
+      if(div.classList.contains("disabled")) return;
+      const opts=div.parentElement.querySelectorAll(".option");
+      opts.forEach(o=>o.classList.add("disabled"));
+      if(idx===q.a){
+        div.classList.add("correct");
+        score++;
+      }else{
+        div.classList.add("wrong");
+        opts[q.a].classList.add("correct");
+      }
+      answered++;
+      if(answered===questions.length){
+        document.getElementById("result").style.display="block";
+        document.getElementById("result").innerHTML=
+        `<h2>Final Score</h2><p>${score} / ${questions.length}</p>`;
+      }
+    };
+    box.appendChild(div);
+  });
+  quiz.appendChild(box);
+});
+</script>
+
+</body>
+</html>
