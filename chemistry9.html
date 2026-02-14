@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chemistry Class IX Quiz</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#0b1a2a;
+color:white;
+padding:20px;
+}
+
+h1{
+color:yellow;
+text-align:center;
+}
+
+h3{
+color:lightgreen;
+}
+
+.question{
+background:#12263a;
+padding:15px;
+margin:15px 0;
+border-radius:10px;
+}
+
+.option{
+display:block;
+background:#1e3a5f;
+margin:5px 0;
+padding:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.option:hover{
+background:#2a4d78;
+}
+
+.correct{
+background:green !important;
+}
+
+.wrong{
+background:red !important;
+}
+
+.result{
+font-weight:bold;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Chemistry Class IX Quiz</h1>
+<h3>Prepared by Irfan Ali</h3>
+
+<div id="quiz"></div>
+
+<script>
+
+const quiz = [
+{
+q:"The branch of Chemistry which deals with hydrocarbons:",
+options:[
+"Industrial chemistry",
+"Inorganic chemistry",
+"Organic chemistry",
+"Physical chemistry"
+],
+correct:2
+},
+
+{
+q:"The atomic mass of an element expressed in gram is:",
+options:[
+"Gram molecular mass",
+"Gram atomic mass",
+"Gram formula mass",
+"Mole"
+],
+correct:1
+},
+
+{
+q:"Which of the following can be separated by physical means?",
+options:[
+"Mixture",
+"Element",
+"Compound",
+"Substance"
+],
+correct:0
+},
+
+{
+q:"The molar mass of H2SO4 is:",
+options:[
+"98 a.m.u",
+"9.8 gm",
+"98 gm",
+"9.8 a.m.u"
+],
+correct:2
+},
+
+{
+q:"The molecule consist of two atoms is:",
+options:[
+"Monoatomic molecule",
+"Polyatomic molecule",
+"Heteroatomic molecule",
+"Diatomic molecule"
+],
+correct:3
+},
+
+{
+q:"A formula that indicates actual number and type of atoms in molecule is:",
+options:[
+"Chemical formula",
+"Empirical formula",
+"Molecular formula",
+"Formula mass"
+],
+correct:2
+},
+
+{
+q:"Ethyl alcohol was prepared by:",
+options:[
+"Ibne-Sina",
+"Al-Razi",
+"Al-Beruni",
+"Jabir bin Hayan"
+],
+correct:1
+},
+
+{
+q:"Which of the following is NOT homoatomic:",
+options:[
+"H2",
+"NH3",
+"O2",
+"N2"
+],
+correct:1
+},
+
+{
+q:"The empirical formula of hydrogen peroxide is:",
+options:[
+"H2O2",
+"HO",
+"OH",
+"O2H2"
+],
+correct:1
+},
+
+{
+q:"A piece of matter in pure form is termed as:",
+options:[
+"Radical",
+"Mixture",
+"Compound",
+"Substance"
+],
+correct:3
+},
+{
+q:"In an atom number of protons and neutrons are added to obtain:",
+options:[
+"number of electrons",
+"number of nucleons",
+"atomic number",
+"number of isotopes"
+],
+correct:1
+},
+
+{
+q:"If proton number is 19, electron configuration will be:",
+options:[
+"2, 8, 9",
+"2, 8, 8, 1",
+"2, 8, 1",
+"2, 8, 3"
+],
+correct:1
+},
+
+{
+q:"Electronic configuration is distribution of:",
+options:[
+"proton",
+"neutron",
+"electron",
+"positron"
+],
+correct:2
+},
+
+{
+q:"Which rays are used for sterilization of medical instruments:",
+options:[
+"alpha rays",
+"beta rays",
+"gamma rays",
+"x rays"
+],
+correct:2
+},
+
+{
+q:"An example of ionic compound is:",
+options:[
+"H2",
+"CH4",
+"N2",
+"NaCl"
+],
+correct:3
+},
+
+{
+q:"Tendency of atoms to acquire eight electrons is called:",
+options:[
+"octet rule",
+"duplet rule",
+"triplet rule",
+"none"
+],
+correct:0
+},
+
+{
+q:"At room temperature most ionic compounds are:",
+options:[
+"amorphous solids",
+"crystalline solids",
+"liquids",
+"gases"
+],
+correct:1
+},
+
+{
+q:"Bond formed by transfer of electrons is:",
+options:[
+"covalent bond",
+"ionic bond",
+"hydrogen bond",
+"metallic bond"
+],
+correct:1
+},
+
+{
+q:"Halogens belong to group:",
+options:[
+"IA",
+"IIA",
+"VIIA",
+"VIIIA"
+],
+correct:2
+},
+
+{
+q:"Metalloids have properties of:",
+options:[
+"only metals",
+"only nonmetals",
+"both metals and nonmetals",
+"none"
+],
+correct:2
+},
+// Chapter 2 Structure of Atom
+
+{
+q:"Maximum number of electrons in K shell are:",
+options:["2","8","18","32"],
+correct:0
+},
+
+{
+q:"Mass number is sum of:",
+options:["protons only","neutrons only","protons and neutrons","electrons and protons"],
+correct:2
+},
+
+{
+q:"Isotopes have same:",
+options:["mass number","atomic number","neutron number","electron number"],
+correct:1
+},
+
+{
+q:"Which particle has negative charge:",
+options:["proton","electron","neutron","nucleus"],
+correct:1
+},
+
+{
+q:"Which particle has maximum mass:",
+options:["electron","proton","neutron","photon"],
+correct:2
+},
+
+{
+q:"Number of shells depends upon:",
+options:["proton number","neutron number","atomic number","none"],
+correct:2
+},
+
+{
+q:"Electronic configuration of Sodium is:",
+options:["2,8,1","2,8,2","2,6","2,8,3"],
+correct:0
+},
+
+{
+q:"Valency depends on:",
+options:["neutrons","protons","outer shell electrons","nucleus"],
+correct:2
+},
+
+{
+q:"Cathode rays are stream of:",
+options:["protons","neutrons","electrons","atoms"],
+correct:2
+},
+
+{
+q:"An atom is electrically:",
+options:["positive","negative","neutral","none"],
+correct:2
+},
+
+
+// Chapter 3 Periodic Table
+
+{
+q:"Horizontal rows are called:",
+options:["groups","periods","families","series"],
+correct:1
+},
+
+{
+q:"Vertical columns are called:",
+options:["periods","groups","rows","blocks"],
+correct:1
+},
+
+{
+q:"Elements in same group have same:",
+options:["mass","valency","neutrons","period"],
+correct:1
+},
+
+{
+q:"Number of periods in periodic table:",
+options:["5","6","7","8"],
+correct:2
+},
+
+{
+q:"Most reactive metals belong to group:",
+options:["I","II","VII","VIII"],
+correct:0
+},
+
+{
+q:"Halogens belong to group:",
+options:["I","VII","VIII","II"],
+correct:1
+},
+
+{
+q:"Noble gases are:",
+options:["reactive","inert","liquid","solid"],
+correct:1
+},
+
+{
+q:"Atomic size decreases across period because:",
+options:["increase protons","decrease protons","increase neutrons","none"],
+correct:0
+},
+
+{
+q:"Metals are found on:",
+options:["right side","left side","center","none"],
+correct:1
+},
+
+{
+q:"Most electronegative element is:",
+options:["Oxygen","Fluorine","Nitrogen","Chlorine"],
+correct:1
+},
+
+
+// Chapter 4 Structure of Molecules
+
+{
+q:"Bond formed by sharing electrons is:",
+options:["ionic","covalent","metallic","hydrogen"],
+correct:1
+},
+
+{
+q:"Example of covalent compound:",
+options:["NaCl","H2O","KCl","NaBr"],
+correct:1
+},
+
+{
+q:"Ionic bond formed by:",
+options:["sharing electrons","transfer electrons","losing neutrons","gaining protons"],
+correct:1
+},
+
+{
+q:"Water molecule shape is:",
+options:["linear","bent","triangular","square"],
+correct:1
+},
+
+{
+q:"Methane formula is:",
+options:["CH4","CO2","H2O","NH3"],
+correct:0
+},
+
+{
+q:"Valency of Oxygen is:",
+options:["1","2","3","4"],
+correct:1
+},
+
+{
+q:"Valency of Hydrogen:",
+options:["1","2","3","4"],
+correct:0
+},
+
+{
+q:"Electrons involved in bonding are:",
+options:["inner shell","outer shell","nucleus","core"],
+correct:1
+},
+
+{
+q:"Single bond contains:",
+options:["1 electron pair","2 pairs","3 pairs","4 pairs"],
+correct:0
+},
+
+{
+q:"Example of ionic compound:",
+options:["NaCl","H2","O2","CH4"],
+correct:0
+},
+
+{
+q:"Intermolecular forces are strongest in:",
+options:["Gases","Liquids","Solids","Plasma"],
+correct:2
+},
+
+{
+q:"Matter with definite shape and volume is:",
+options:["Liquid","Gas","Solid","Plasma"],
+correct:2
+},
+
+{
+q:"Particles in gases move:",
+options:["Slowly","Moderately","Freely","Not at all"],
+correct:2
+},
+
+{
+q:"SI unit of temperature is:",
+options:["Celsius","Kelvin","Fahrenheit","Joule"],
+correct:1
+},
+
+{
+q:"Boiling converts liquid into:",
+options:["Solid","Gas","Plasma","Crystal"],
+correct:1
+},
+
+{
+q:"Sublimation is change from:",
+options:["Solid to liquid","Liquid to gas","Solid to gas","Gas to liquid"],
+correct:2
+},
+
+{
+q:"Evaporation occurs at:",
+options:["Boiling point","Freezing point","All temperatures","Melting point"],
+correct:2
+},
+
+{
+q:"Plasma is:",
+options:["Neutral gas","Ionized gas","Liquid","Solid"],
+correct:1
+},
+
+{
+q:"Shape of liquid is:",
+options:["Fixed","Definite","Container shape","None"],
+correct:2
+},
+
+{
+q:"Gas particles have:",
+options:["Strong force","Weak force","No force","Maximum force"],
+correct:1
+},
+
+// Chapter 6
+
+{
+q:"Solution is:",
+options:["Element","Compound","Mixture","Solid"],
+correct:2
+},
+
+{
+q:"Solvent is present in:",
+options:["Less amount","Greater amount","Equal amount","None"],
+correct:1
+},
+
+{
+q:"Solute is present in:",
+options:["Greater amount","Smaller amount","Equal amount","None"],
+correct:1
+},
+
+{
+q:"Universal solvent is:",
+options:["Alcohol","Water","Benzene","Ether"],
+correct:1
+},
+
+{
+q:"Concentrated solution contains:",
+options:["Less solute","More solute","No solute","Equal solute"],
+correct:1
+},
+
+{
+q:"Dilute solution contains:",
+options:["More solute","Less solute","Equal solute","None"],
+correct:1
+},
+
+{
+q:"Solubility depends on:",
+options:["Temperature","Pressure","Nature","All"],
+correct:3
+},
+
+{
+q:"Suspension is:",
+options:["Homogeneous","Heterogeneous","Pure","Compound"],
+correct:1
+},
+
+{
+q:"Colloid is:",
+options:["Homogeneous","Heterogeneous","Element","Compound"],
+correct:1
+},
+
+{
+q:"Example of solution:",
+options:["Salt water","Sand","Stone","Iron"],
+correct:0
+},
+
+// Chapter 7
+
+{
+q:"Electrolysis uses:",
+options:["Heat","Light","Electricity","Pressure"],
+correct:2
+},
+
+{
+q:"Cathode is:",
+options:["Positive electrode","Negative electrode","Neutral","None"],
+correct:1
+},
+
+{
+q:"Anode is:",
+options:["Negative electrode","Positive electrode","Neutral","None"],
+correct:1
+},
+
+{
+q:"Oxidation is:",
+options:["Gain electrons","Loss electrons","Gain neutrons","Loss protons"],
+correct:1
+},
+
+{
+q:"Reduction is:",
+options:["Loss electrons","Gain electrons","Loss neutrons","Gain protons"],
+correct:1
+},
+
+{
+q:"Electrolyte conducts electricity in:",
+options:["Solid","Molten","Solution","Both molten and solution"],
+correct:3
+},
+
+{
+q:"Non-electrolyte example:",
+options:["NaCl","Sugar","HCl","KCl"],
+correct:1
+},
+
+{
+q:"Battery converts:",
+options:["Electrical to chemical","Chemical to electrical","Heat to electrical","None"],
+correct:1
+},
+
+{
+q:"Oxidation occurs at:",
+options:["Cathode","Anode","Both","None"],
+correct:1
+},
+
+{
+q:"Reduction occurs at:",
+options:["Anode","Cathode","Both","None"],
+correct:1
+},
+
+// Chapter 8
+
+{
+q:"Most reactive metal is:",
+options:["Na","Cu","Fe","Ag"],
+correct:0
+},
+
+{
+q:"Least reactive metal is:",
+options:["Na","K","Au","Ca"],
+correct:2
+},
+
+{
+q:"Rust is:",
+options:["FeO","Fe2O3","Fe2O3·xH2O","Fe"],
+correct:2
+},
+
+{
+q:"Rusting requires:",
+options:["Oxygen","Water","Both","None"],
+correct:2
+},
+
+{
+q:"Corrosion is:",
+options:["Destruction of metal","Formation","Purification","None"],
+correct:0
+},
+
+{
+q:"Example noble metal:",
+options:["Na","Au","Ca","Mg"],
+correct:1
+},
+
+{
+q:"Most reactive nonmetal:",
+options:["F","Cl","O","N"],
+correct:0
+},
+
+{
+q:"Reactivity series is arrangement of:",
+options:["Compounds","Metals","Gases","Liquids"],
+correct:1
+},
+
+{
+q:"More reactive metal displaces:",
+options:["More reactive","Less reactive","Equal reactive","None"],
+correct:1
+},
+
+{
+q:"Noble metals are:",
+options:["Reactive","Less reactive","Inert","Gas"],
+correct:2
+},
+
+// Chapter 9
+
+{
+q:"Formula of water:",
+options:["H2O","CO2","O2","H2"],
+correct:0
+},
+
+{
+q:"Pure water is:",
+options:["Acidic","Basic","Neutral","Salt"],
+correct:2
+},
+
+{
+q:"Hard water contains:",
+options:["Na","Ca and Mg","Fe","K"],
+correct:1
+},
+
+{
+q:"Temporary hardness removed by:",
+options:["Boiling","Freezing","Melting","Cooling"],
+correct:0
+},
+
+{
+q:"Permanent hardness removed by:",
+options:["Boiling","Washing soda","Cooling","Freezing"],
+correct:1
+},
+
+{
+q:"Water freezes at:",
+options:["0°C","50°C","100°C","25°C"],
+correct:0
+},
+
+{
+q:"Water boils at:",
+options:["0°C","50°C","100°C","200°C"],
+correct:2
+},
+
+{
+q:"Heavy water formula:",
+options:["H2O","D2O","HO","DO"],
+correct:1
+},
+
+{
+q:"Universal solvent:",
+options:["Water","Alcohol","Benzene","Ether"],
+correct:0
+},
+
+{
+q:"Earth surface covered by water:",
+options:["50%","60%","70%","80%"],
+correct:2
+},
+
+// Chapter 10
+
+{
+q:"Major atmospheric gas:",
+options:["Oxygen","Nitrogen","CO2","Hydrogen"],
+correct:1
+},
+
+{
+q:"Oxygen percentage:",
+options:["21%","50%","78%","10%"],
+correct:0
+},
+
+{
+q:"Ozone protects from:",
+options:["Visible rays","UV rays","Heat","Cold"],
+correct:1
+},
+
+{
+q:"Greenhouse gas:",
+options:["CO2","O2","N2","He"],
+correct:0
+},
+
+{
+q:"Air is:",
+options:["Compound","Mixture","Element","Solution"],
+correct:1
+},
+
+{
+q:"Nitrogen used in:",
+options:["Fertilizers","Fuel","Metals","Plastic"],
+correct:0
+},
+
+{
+q:"Ozone formula:",
+options:["O2","O3","O4","O"],
+correct:1
+},
+
+{
+q:"Atmosphere protects from:",
+options:["Meteors","Radiation","Heat","All"],
+correct:3
+},
+
+{
+q:"CO2 used in:",
+options:["Breathing","Photosynthesis","Drinking","Freezing"],
+correct:1
+},
+
+{
+q:"Closest atmospheric layer:",
+options:["Stratosphere","Troposphere","Mesosphere","Ionosphere"],
+correct:1
+}
+
+
+];
+
+const quizDiv = document.getElementById("quiz");
+
+quiz.forEach((item,index)=>{
+
+const qDiv = document.createElement("div");
+qDiv.className="question";
+
+const qText = document.createElement("h3");
+qText.innerText=(index+1)+". "+item.q;
+qDiv.appendChild(qText);
+
+item.options.forEach((opt,i)=>{
+
+const btn=document.createElement("div");
+btn.className="option";
+btn.innerText=opt;
+
+btn.onclick=function(){
+
+if(qDiv.classList.contains("answered")) return;
+
+qDiv.classList.add("answered");
+
+if(i===item.correct){
+btn.classList.add("correct");
+showResult("Correct!",qDiv);
+}
+else{
+btn.classList.add("wrong");
+
+const correctBtn=qDiv.querySelectorAll(".option")[item.correct];
+correctBtn.classList.add("correct");
+
+showResult("Wrong! Correct answer: "+item.options[item.correct],qDiv);
+}
+
+};
+
+qDiv.appendChild(btn);
+
+});
+
+quizDiv.appendChild(qDiv);
+
+});
+
+function showResult(text,parent){
+
+const res=document.createElement("div");
+res.className="result";
+res.innerText=text;
+
+parent.appendChild(res);
+
+}
+
+</script>
+
+</body>
+</html>
