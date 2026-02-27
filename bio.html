@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Biology Quiz 1–90 | Made by Irfan Ali</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+font-family:Segoe UI;
+background:linear-gradient(135deg,#0f2027,#2c5364);
+color:white;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+background:rgba(0,0,0,0.6);
+padding:20px;
+border-radius:15px;
+box-shadow:0 0 15px black;
+}
+
+h1{
+text-align:center;
+}
+
+.question{
+background:rgba(255,255,255,0.05);
+padding:15px;
+margin:12px 0;
+border-radius:10px;
+}
+
+.option{
+background:white;
+color:black;
+padding:10px;
+margin:6px 0;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.option:hover{
+background:#ddd;
+}
+
+.correct{
+background:#28a745 !important;
+color:white;
+}
+
+.wrong{
+background:#dc3545 !important;
+color:white;
+}
+
+.footer{
+text-align:center;
+margin-top:20px;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Biology Quiz (Questions 1–90)</h1>
+
+<div id="quiz"></div>
+
+<div class="footer">Made by Irfan Ali</div>
+
+</div>
+
+<script>
+
+const quizData = [
+
+{q:"A localized group of organisms that belong to same species is called:",options:["Biosphere","Community","Ecosystem","Population"],correct:3},
+{q:"Increased fish production:",options:["Fisheries","Farming","Animal husbandry","Forestry"],correct:0},
+{q:"Study of fossils:",options:["Entomology","Paleontology","Taxonomy","Histology"],correct:1},
+{q:"Physics applied to biology:",options:["Biometry","Biostatistics","Biophysics","Bioeconomics"],correct:2},
+{q:"Incorrect statement:",options:["CHONPS basic elements","Life chemical based","Different species form population","Earth life part biosphere"],correct:2},
+{q:"Disease treatment science:",options:["Agriculture","Medicine","Surgery","Both B and C"],correct:3},
+{q:"Similar cells form:",options:["Organs","System","Tissue","Body"],correct:2},
+{q:"Scientific name frog:",options:["Palaeon","Rana tigrina","Periplaneta","Pheretima"],correct:1},
+{q:"Correct organization sequence:",options:["Atom→Cell→Tissue→Molecule→Organ","Atom→Tissue→Cell→Molecule→Organ","Atom→Molecule→Cell→Tissue→Organ","Atom→Cell→Molecule→Tissue→Organ"],correct:2},
+{q:"Volvox belongs to:",options:["Green algae","Red algae","Brown algae","None"],correct:0},
+
+{q:"Biological method correct sequence:",options:["Law→Theory→Reasoning→Hypothesis","Hypothesis→Theory→Law→Reasoning","Hypothesis→Reasoning→Theory→Law","Law→Hypothesis→Reasoning→Theory"],correct:2},
+{q:"Odd one:",options:["Theory","Law","Hypothesis","Ratio"],correct:3},
+{q:"Mathematical representation biology:",options:["Ratio","Mathematical biology","Proportion","Law"],correct:1},
+{q:"Biological method excludes:",options:["Data collection","Observation","Experiment","Proportion"],correct:3},
+{q:"Specific to general reasoning:",options:["Inductive","Deductive","Observation","Both"],correct:0},
+{q:"Quantitative observation uses:",options:["Senses","Equipment","Guess","Ratio"],correct:1},
+{q:"Two equal ratios:",options:["Ratio","Proportion","Guess","Senses"],correct:1},
+{q:"Comparison of two values:",options:["Ratio","Proportion","Graph","Table"],correct:0},
+{q:"Hypothesis is:",options:["Unproven theory","Testable explanation","Observation","Fact"],correct:1},
+{q:"Best data organization:",options:["Table","Graph","Ratio","Both"],correct:3},
+
+{q:"Correct scientific name:",options:["Houbara bustard","E.coli","Alium Cepa","canis lupis"],correct:1},
+{q:"Mismatched:",options:["Plantae→Pteridophyta","Fungi→Mucor","Protista→Paramecium","Animalia→Amoeba"],correct:3},
+{q:"Correct classification sequence:",options:["Species→Genus→Kingdom","Kingdom→Phylum→Class→Order→Family→Genus→Species","Kingdom→Phylum→Class→Family→Order","Wrong"],correct:1},
+{q:"Not classification basis:",options:["Analogous","Homologous","Cytology","Genetics"],correct:0},
+{q:"Largest taxonomic:",options:["Genus","Species","Order","Class"],correct:3},
+{q:"Metaphyta excludes:",options:["Algae","Angiosperm","Gymnosperm","Bryophyta"],correct:0},
+{q:"Virus kingdom:",options:["Monera","Protista","Plantae","None"],correct:3},
+{q:"Scientific name cat:",options:["Felis catus","Azadirachta indica","Alium Cepa","Canis lupus"],correct:0},
+{q:"Heterotrophic cell wall kingdom:",options:["Monera","Protista","Plantae","Fungi"],correct:3},
+{q:"Biodiversity affected by:",options:["Pollution","Deforestation","Over hunting","All"],correct:3},
+
+{q:"Electron microscope resolution:",options:["High magnification","Short wavelength","Heavy metals","Thin section"],correct:1},
+{q:"RER function:",options:["Respiration","Digestion","Steroid synthesis","Protein synthesis"],correct:3},
+{q:"Fluid mosaic correct:",options:["Less unsaturated more fluid","More unsaturated more fluid","Higher temp less fluid","Lower temp more fluid"],correct:1},
+{q:"Cell movement process:",options:["Osmosis","Diffusion","Active transport","All"],correct:3},
+{q:"Cell theory incorrect:",options:["Cells from cells","No hereditary material","Organisms made of cells","Cell basic unit"],correct:1},
+{q:"Secondary wall:",options:["Pectin cellulose","Cellulose protein","Cellulose lignin","Lignin pectin"],correct:2},
+{q:"Odd one:",options:["Active transport","Diffusion","Facilitated diffusion","Osmosis"],correct:0},
+{q:"Protein pathway:",options:["RER→Ribosome→Golgi→Lysosome","Ribosome→RER→Golgi→Lysosome","Golgi→RER→Ribosome","Wrong"],correct:1},
+{q:"Digestion organelle:",options:["Lysosome","Ribosome","Mitochondria","Golgi"],correct:0},
+{q:"Mismatched:",options:["Plastids storage","Centriole division","Ribosome steroids","Mitochondria ATP"],correct:2},
+
+{q:"Mitosis involves:",options:["Growth repair asexual","Growth reduction","Growth replication","Wrong"],correct:0},
+{q:"Metaphase:",options:["Line equator","Reach poles","Separate","Visible"],correct:0},
+{q:"Mismatched:",options:["Anaphase chromatids move","Prophase centriole move","Telophase membrane disappear","Metaphase line up"],correct:2},
+{q:"Prophase event:",options:["Centromere division","Chromosome formation","DNA replication","Centriole separate"],correct:3},
+{q:"Cell suicide:",options:["Apoptosis","Necrosis","Autophagy","Both"],correct:0},
+{q:"Meiosis incorrect:",options:["Maintain number","Reduce number","Gamete production","Somatic cell production"],correct:3},
+{q:"Spore division:",options:["Amitosis","Mitosis","Meiosis","Both"],correct:2},
+{q:"Chromatids reach poles:",options:["Prophase","Metaphase","Anaphase","Telophase"],correct:3},
+{q:"Centromere shorten meiosis:",options:["Anaphase II","Metaphase II","Telophase II","Prophase II"],correct:0},
+{q:"Chromosome fail separate:",options:["Non disjunction","Terminalization","Synapsis","Linkage"],correct:0},
+
+{q:"Enzyme incorrect:",options:["Speed reaction","Sensitive pH","Enhanced inhibitors","Active site"],correct:2},
+{q:"Enzyme nature:",options:["Steroid","Protein","Lipid","Carbohydrate"],correct:1},
+{q:"Metabolic reactions:",options:["Constructive","Destructive","Both","All"],correct:2},
+{q:"Most active enzyme:",options:["Neutral","Acidic","Basic","Optimum"],correct:3},
+{q:"Changing active site:",options:["Induced fit","Lock key","Fluid mosaic","Both"],correct:0},
+{q:"Mismatched:",options:["Protease carbohydrate","Lipase lipid","Trypsin protein","All correct"],correct:0},
+{q:"Reaction conditions:",options:["Temp nature","Nature pressure","Nature structure","Temp pressure"],correct:3},
+{q:"Not enzyme factor:",options:["pH","Substrate","Solvent","Temperature"],correct:2},
+{q:"Temp increases rate:",options:["Increase","Decrease","Below 10","Both"],correct:0},
+{q:"Lock key model:",options:["Complementary shape","Flexible","Changes","All"],correct:0},
+
+{q:"14135KJ glucose:",options:["1","3","5","10"],correct:1},
+{q:"Cristae respiration:",options:["Electron chain","Glycolysis","Krebs","C3"],correct:0},
+{q:"180 ATP glucose:",options:["2","5","8","10"],correct:1},
+{q:"Loss electron proton:",options:["Oxidation","Reduction","Redox","All"],correct:0},
+{q:"ATP energy:",options:["7.3 kcal","7.3 kj","17.3 kcal","17.3 kj"],correct:0},
+{q:"Photosynthesis product:",options:["Glucose","Amino","Fatty","Nucleotide"],correct:0},
+{q:"Light reaction location:",options:["Stroma","Thylakoid","Cristae","Cisternae"],correct:1},
+{q:"Stroma reaction:",options:["Light","Dark","Both","None"],correct:1},
+{q:"Water splitting:",options:["Hydrolysis","Glycolysis","Photolysis","None"],correct:2},
+{q:"Glycolysis ATP:",options:["2","5","18","36"],correct:0},
+
+{q:"Mismatched:",options:["Protein amino","Carbohydrate glucose","Fat starch","Nucleic nucleotide"],correct:2},
+{q:"Vitamin K deficiency:",options:["Rickets","Anemia","Scurvy","Bleeding"],correct:3},
+{q:"Rapid growth period:",options:["Childhood","Adult","Adolescence","Both"],correct:2},
+{q:"Protein deficiency:",options:["Marasmus","Edema","Diarrhea","Kwashiorkor"],correct:3},
+{q:"Energy storage:",options:["Fat","Carbohydrate","Protein","Mineral"],correct:0},
+{q:"Correct vitamin:",options:["Vit K WBC","Vit C rickets","Vit E cancer","Vit A vision"],correct:3},
+{q:"Pepsin:",options:["Pancreas","Emulsion","Split maltose","Digest protein"],correct:3},
+{q:"Bile salts:",options:["Enzyme","Pancreas","Emulsify fat","Increase pepsin"],correct:2},
+{q:"Trachea oesophagus connect:",options:["Large intestine","Stomach","Pharynx","Rectum"],correct:2},
+{q:"Not calcium source:",options:["Red meat","Green veg","Broccoli","Nuts"],correct:0},
+
+{q:"Food transport:",options:["Xylem","Vessel","Tracheid","Phloem"],correct:3},
+{q:"Water regulation:",options:["Passive endodermis","Companion cells","Evaporation","Active transport"],correct:2},
+{q:"Not sink:",options:["Mature leaf","Storage organ","Growing root","Both"],correct:0},
+{q:"Plasma protein:",options:["Fibrinogen","Hemoglobin","Albumin","Both I and III"],correct:3},
+{q:"Clotting:",options:["Platelet","Hemoglobin","Albumin","Globulin"],correct:0},
+{q:"Blood lungs:",options:["Left atrium","Left ventricle","Right atrium","Right ventricle"],correct:0},
+{q:"Root hair:",options:["Store starch","Contain xylem","Habitat bacteria","Increase absorption"],correct:3},
+{q:"Space circulation:",options:["Open","Closed","Pulmonary","Both"],correct:0},
+{q:"Between epidermis endodermis:",options:["Xylem","Root hair","Phloem","Cortex"],correct:3},
+{q:"Water movement:",options:["Diffusion","Osmosis","Active","Potential"],correct:1}
+
+];
+
+const quiz=document.getElementById("quiz");
+
+quizData.forEach((data,index)=>{
+
+let div=document.createElement("div");
+div.className="question";
+
+let q=document.createElement("h3");
+q.innerText=(index+1)+". "+data.q;
+div.appendChild(q);
+
+data.options.forEach((opt,i)=>{
+
+let btn=document.createElement("div");
+btn.className="option";
+btn.innerText=opt;
+
+btn.onclick=()=>{
+
+let all=div.querySelectorAll(".option");
+all.forEach(o=>o.onclick=null);
+
+if(i===data.correct){
+btn.classList.add("correct");
+btn.innerHTML+=" ✓";
+}else{
+btn.classList.add("wrong");
+all[data.correct].classList.add("correct");
+all[data.correct].innerHTML+=" ✓";
+}
+
+};
+
+div.appendChild(btn);
+
+});
+
+quiz.appendChild(div);
+
+});
+
+</script>
+
+</body>
+</html>
