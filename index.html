@@ -13,10 +13,12 @@ window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
 
 <style>
 body{
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#e3f2fd,#fdfefe);
+  font-family:'Segoe UI', sans-serif;
+  background:linear-gradient(135deg,#e3f2fd,#fdfefe);
   padding:20px;
 }
+
+/* MAIN BOX */
 .quiz-box{
   max-width:950px;
   margin:auto;
@@ -25,20 +27,28 @@ body{
   border-radius:16px;
   box-shadow:0 18px 35px rgba(0,0,0,.15);
 }
+
+/* HEADINGS */
 h1{
   text-align:center;
   color:#2c3e50;
+  margin-bottom:10px;
 }
+
 h2{
   text-align:center;
-  color:#555;
+  color:yellow;
   font-weight:normal;
+  margin-bottom:15px;
 }
+
+/* QUESTIONS */
 .question{
   margin:20px 0;
   padding:15px;
   border-bottom:1px solid #eee;
 }
+
 .option{
   display:block;
   padding:12px 15px;
@@ -48,20 +58,26 @@ h2{
   cursor:pointer;
   transition:.25s;
 }
+
 .option:hover{
   background:#dde7ff;
 }
+
 .correct{
   background:#c8f7c5 !important;
 }
+
 .wrong{
   background:#f7c5c5 !important;
 }
+
 .option span{
   float:right;
   font-size:18px;
   font-weight:bold;
 }
+
+/* SCORE */
 #score{
   margin-top:30px;
   padding:15px;
@@ -71,28 +87,33 @@ h2{
   background:#ecfdf3;
   border-radius:12px;
   display:none;
-} footer{
+}
+
+footer{
   text-align:center;
   margin-top:25px;
   color:#777;
   font-size:14px;
 }
 
-/* ===== COVER IMAGE ===== */
+
+/* ===== COVER IMAGE FIXED ===== */
+
 .cover-img{
-  height:300px;
+  min-height:340px; /* flexible height */
   background-image:url("phy.jpg");
   background-size:cover;
   background-position:center;
   border-radius:16px;
   margin-bottom:30px;
   position:relative;
+  overflow:hidden;
 }
 
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.65);
   color:#fff;
   display:flex;
   flex-direction:column;
@@ -100,88 +121,75 @@ h2{
   align-items:center;
   text-align:center;
   border-radius:16px;
+  padding:25px;
 }
 
+/* MAIN COVER TITLE */
 .overlay h1{
-  font-size:34px;
-  margin:0;
+  font-size:32px;
+  color:#1e90ff;
+  margin-bottom:10px;
 }
 
-.overlay p{
+/* SUB TITLE */
+.overlay h2{
+  font-size:22px;
+  color:yellow;
+  margin-bottom:15px;
+}
+
+/* AUTHOR TEXT */
+.overlay .author{
+  margin-top:20px;
+  color:yellow;
+  font-weight:bold;
   font-size:18px;
-  margin:6px 0;
 }
 
-.overlay span{
-  margin-top:10px;
-  padding:6px 16px;
-  background:rgba(255,255,255,0.25);
-  border-radius:20px;
-  font-size:14px;
-}
-.links-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 60px;
-}
 
-.left-links, .right-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.links-container a {
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    background: rgba(0,0,0,0.6);
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.links-container a:hover {
-    background: #007bff;
-    transform: scale(1.05);
-}
-.links-container {
-    background: rgba(0,0,0,0.7);
-    border-radius: 15px;
-}
-h2{
-    color: yellow;
-}
-a{
-    color: yellow;
-}
-
-  .class-pages {
-    display: flex;
-    justify-content: space-between; /* pushes left and right apart */
-    align-items: flex-start;
-    width: 60%;        /* adjust width as needed */
-    margin: 20px auto; /* center the whole section */
+/* CLASS LINKS LEFT RIGHT FIXED */
+.class-pages{
+  display:flex;
+  justify-content:space-between;
+  width:70%;
+  margin-top:15px;
 }
 
 .class-pages .left,
-.class-pages .right {
-    width: 45%;
-    text-align: left;
+.class-pages .right{
+  width:45%;
 }
 
-.class-pages a {
-    display: block;
-    color: yellow;
-    font-size: 18px;
-    text-decoration: none;
-    margin: 5px 0;
+.class-pages a{
+  display:block;
+  color:yellow;
+  font-size:18px;
+  text-decoration:none;
+  margin:6px 0;
+  transition:0.3s;
 }
 
-.class-pages a:hover {
-    color: #00ffcc;
+.class-pages a:hover{
+  color:#00ffcc;
+  transform:translateX(5px);
 }
+
+
+/* MOBILE RESPONSIVE */
+@media(max-width:700px){
+
+  .class-pages{
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
+
+  .class-pages .left,
+  .class-pages .right{
+    width:100%;
+    text-align:center;
+  }
+
 }
 </style>
 </head>
